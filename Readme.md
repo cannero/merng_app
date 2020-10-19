@@ -8,6 +8,8 @@
 - create cluster with mongoDB Atlas
 - add new user, save id/pwd in .env
 - allow all IP addresses to connect
+- create new db 'merng'
+- create collections 'posts'
 ## set up docker
 `rake setup`
 ## run container
