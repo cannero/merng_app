@@ -7,7 +7,7 @@ end
 task :run do
   sh "sudo docker-compose run --service-ports --rm dev" do |ok, res|
     if ok || res.exitstatus == 130
-      puts "everything ok"
+      #puts "everything ok"
     else
       puts "failed with <#{res}>"
     end
