@@ -16,6 +16,9 @@
 `rake`
 ## start apollo server
 `node index`
+## create react app
+npx create-react-app client
 # Todo
-https://code.visualstudio.com/docs/remote/containers
+- move react node\_module to docker volume
+- https://code.visualstudio.com/docs/remote/containers
 
