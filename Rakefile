@@ -5,7 +5,11 @@ task :setup do
 end
 
 task :run do
-  sh "sudo docker-compose run --service-ports --rm dev" do |ok, res|
+  sh "sudo docker-compose up"
+end
+
+task :devel do
+  sh "sudo docker-compose run --service-ports --rm dev bash" do |ok, res|
     if ok || res.exitstatus == 130
       #puts "everything ok"
     else

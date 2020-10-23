@@ -1,14 +1,23 @@
-version: '3'
+version: '3.4'
+x-base:
+        &base
+        image: node:14
+        volumes:
+                - nodemodules:/usr/src/merng_app/node_modules
+                - .:/usr/src/merng_app
+        environment:
+                - NODE_ENV=development
 services:
+        dev_react:
+                << : *base
+                working_dir: /usr/src/merng_app/client
+                command: yarn start
+                ports:
+                        - 3000:3000
         dev:
-                image: node:14
-                volumes:
-                        - nodemodules:/usr/src/merng_app/node_modules
-                        - .:/usr/src/merng_app
-                environment:
-                        - NODE_ENV=development
+                << : *base
                 working_dir: /usr/src/merng_app
-                command: bash
+                command: node index
                 ports:
                         - 5000:5000
 volumes:
