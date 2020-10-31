@@ -20,5 +20,4 @@
 npx create-react-app client
 # Todo
 - move react node\_module to docker volume
-- https://code.visualstudio.com/docs/remote/containers
-
+- first like click shows 'Can't perform a React state update on an unmounted component'

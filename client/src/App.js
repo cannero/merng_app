@@ -9,9 +9,11 @@ import MenuBar from './components/MenuBar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import {AuthProvider} from './context/auth';
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Container>
       <MenuBar/>
@@ -22,6 +24,7 @@ function App() {
       <Route exact path='/register' component={Register} />
       </Container>
     </Router>
+    </AuthProvider>
   );
 }
 

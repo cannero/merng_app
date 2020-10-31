@@ -7,8 +7,6 @@ import PostCard from '../components/PostCard';
 
 function Home(){
     const {loading, data} = useQuery(FETCH_POSTS_QUERY);
-    //const {loading, data: {getPosts: posts}} = useQuery(FETCH_POSTS_QUERY);
-    const posts = data ? data.getPosts : undefined;
     return (
             <Grid columns = {3}>
                 <Grid.Row>
@@ -18,7 +16,7 @@ function Home(){
                     {loading? (
                         <h1>Loading...</h1>
                     ) : (
-                        posts && posts.map((post) =>
+                        data.getPosts && data.getPosts.map((post) =>
                         <Grid.Column key = {post.id} style={{marginBottom:20}}>
                             <PostCard post={post}/>
                         </Grid.Column>)
